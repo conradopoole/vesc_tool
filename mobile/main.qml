@@ -511,7 +511,8 @@ ApplicationWindow {
                                                     (uiAppPage.visible ? 1 : 0) +
                                                     (confCustomButton.visible ? 1 : 0) +
                                                     (confPageMotor.visible ? 1 : 0) +
-                                                    (confPageApp.visible ? 1 : 0)))
+                                                    (confPageApp.visible ? 1 : 0) +
+                                                    (bmsPage.visible ? 1 : 0)))
 
                 Repeater {
                     id: rep
@@ -1156,7 +1157,10 @@ ApplicationWindow {
         function onUpdated() {
             confTimer.mcConfRx = true
             /* BMS button is visible if BMS Type != None, or if it's not an ESC */
-            bmsDataButton.visible = (mMcConf.getParamInt("bms.type") > 0) || (VescIf.getFwSupportsConfiguration() == false)
+            //bmsDataButton.visible = (mMcConf.getParamInt("bms.type") > 0) || (VescIf.getFwSupportsConfiguration() == false)
+            bmsPage.visible = (mMcConf.getParamInt("bms.type") > 0) || (VescIf.getFwSupportsConfiguration() == false)
+            mainSwipeView.insertItem(4, bmsPage)
+            tabBar.insertItem(4, bmsDataButton)
         }
     }
 
