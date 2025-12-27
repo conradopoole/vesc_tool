@@ -1158,7 +1158,8 @@ ApplicationWindow {
             confTimer.mcConfRx = true
             /* BMS button is visible if BMS Type != None, or if it's not an ESC */
             //bmsDataButton.visible = (mMcConf.getParamInt("bms.type") > 0) || (VescIf.getFwSupportsConfiguration() == false)
-            bmsPage.visible = (mMcConf.getParamInt("bms.type") > 0) || (VescIf.getFwSupportsConfiguration() == false)
+            //bmsPage.visible = (mMcConf.getParamInt("bms.type") > 0) || (VescIf.getFwSupportsConfiguration() == false)
+            bmsPage.visible = true
             mainSwipeView.insertItem(4, bmsPage)
             tabBar.insertItem(4, bmsDataButton)
         }
